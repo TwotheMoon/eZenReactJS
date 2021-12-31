@@ -21,11 +21,11 @@ function App() {
         {
           content.map((list) => {
             return (
-              <>
-                <li>{list.id}</li>
-                <li>{list.title}</li>
-                <li>{list.desc}</li>
-              </>
+              <li key={list.id}>
+                {list.id}
+                {list.title}
+                {list.desc}
+              </li>
             );
           })
         }
