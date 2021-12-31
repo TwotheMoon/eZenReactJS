@@ -1,0 +1,102 @@
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS with Codeit</title>
+    <style>
+        #myNumber {
+            font-size: 100px;
+        }
+
+        .color-btn {
+            width: 30px;
+            height: 30px;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .red {
+            background-color: #FF0000;
+        }
+
+        .orange {
+            background-color: #FFA500;
+        }
+
+        .yellow {
+            background-color: #FFFF00;
+        }
+
+        .green {
+            background-color: #008000;
+        }
+
+        .blue {
+            background-color: #0000FF;
+        }
+
+        .indigo {
+            background-color: #4B0082;
+        }
+
+        .purple {
+            background-color: #800080;
+        }
+
+        .black {
+            background-color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myNumber">0</div>
+    <div id="btns">
+        <div>
+            <button id="decrease">-</button>
+            <button id="increase">+</button>
+        </div>
+        <div>
+            <button class="color-btn red" data-color="#FF0000"></button>
+            <button class="color-btn orange" data-color="#FFA500"></button>
+            <button class="color-btn yellow" data-color="#FFFF00"></button>
+            <button class="color-btn green" data-color="#008000"></button>
+            <button class="color-btn blue" data-color="#0000FF"></button>
+            <button class="color-btn indigo" data-color="#4B0082"></button>
+            <button class="color-btn purple" data-color="#800080"></button>
+            <button class="color-btn black" data-color="#000000"></button>
+        </div>
+    </div>
+    <script>
+        const myNumberTag = document.getElementById('myNumber');
+        const decreaseBtn = document.getElementById('decrease');
+        const increaseBtn = document.getElementById('increase');
+
+        let myNumber = +myNumberTag.textContent;
+
+        decreaseBtn.onclick = function () {
+            myNumber--;
+            if (myNumber < 0) {
+                return;  // 함수 빠져 나오기 (이하 문장 실행X)
+            } else {
+                myNumberTag.textContent = myNumber;
+            }
+        };
+
+        increaseBtn.onclick = function () {
+            myNumber++;
+            myNumberTag.textContent = myNumber;
+        };
+
+        const colorBtns = document.getElementsByClassName('color-btn');
+
+        for (let btn of colorBtns) {
+            btn.onclick = function () {
+                myNumberTag.style.color = btn.dataset.color;
+            };
+        }
+    </script>
+</body>
+
+</html>

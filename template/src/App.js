@@ -3,35 +3,38 @@ import './App.css';
 
 function App() {
   const [title, setTitle] = useState(['list1', 'list2', 'list3']);
-  const changeTitle = (() => {
-    setTitle("변경된 제목");
-  });
-
-  const [count, setCount] = useState(0);
-  const countUp = (() => {
-    setCount((prev) => prev + 1);
+  const [flag, setFlag] = useState(false);
+  const onClick = (() => {
+    setFlag((prev) => !prev);
   });
 
   return (
+    <div className="App">
 
-    <>
-      <div className="App">
+      {
+        title.map((title, index) => {
+          return (
+            <div key={index} className="title">Title:{title}</div>
+          )
+        })
+      }
+      <button onClick={onClick}>On/Off</button>
 
-        {
-          title.map((title, index) => {
-            return (
-              <div key={index} className="title">Title:{title}</div>
-            )
-          })
-        }
-        <h2>{title}</h2>
-        <h2>{count}</h2>
-        <button onClick={changeTitle}>버튼을 클릭하세요</button>
-        <button onClick={countUp}>Count up</button>
-      </div>
-    </>
-
+      {
+        flag ? <SubPage /> : null
+      }
+    </div>
   );
-}
 
+  function SubPage() {
+
+    return (
+      <div>
+        <h2>서브 페이지</h2>
+        <div>Hello World</div>
+      </div>
+    );
+  }
+
+}
 export default App;
