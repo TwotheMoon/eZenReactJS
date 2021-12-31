@@ -1,48 +1,36 @@
-import { useState } from 'react';
 import './App.css';
-import styled from 'styled-components';
-
-
-const SubBox = styled.div`
-    background-color: #eee;
-  `;
-function SubPage() {
-
-  return (
-    <SubBox>
-      <h2>서브 페이지</h2>
-      <div>Hello World</div>
-    </SubBox>
-  );
-}
+import { Header } from './Header';
+import React, { useState } from 'react';
 
 function App() {
-  const [title, setTitle] = useState(['list1', 'list2', 'list3']);
-  const [flag, setFlag] = useState(false);
-  const onClick = (() => {
-    setFlag((prev) => !prev);
-  });
+
+  const [subject, setSubject] = useState([
+    { title: 'WEB', sub: '인터넷에 설명설명....' }
+  ]);
+  const [content, setContent] = useState([
+    { id: 1, title: "Html", desc: '에치티에멜' },
+    { id: 2, title: "CSS", desc: '시에스에스' },
+    { id: 3, title: "Js", desc: '자바스크립트짱' },
+  ]);
+
 
   return (
-    <div className="App">
-
-      {
-        title.map((title, index) => {
-          return (
-            <div key={index} className="title">Title:{title}</div>
-          )
-        })
-      }
-      <button onClick={onClick}>On/Off</button>
-
-      {
-        flag ? <SubPage /> : null
-      }
-    </div>
+    <>
+      <Header title={subject[0].title} sub={subject[0].sub} />
+      <ul>
+        {
+          content.map((list) => {
+            return (
+              <>
+                <li>{list.id}</li>
+                <li>{list.title}</li>
+                <li>{list.desc}</li>
+              </>
+            );
+          })
+        }
+      </ul>
+    </>
   );
-
-
-
-
 }
 export default App;
