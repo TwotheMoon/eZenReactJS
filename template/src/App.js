@@ -1,5 +1,20 @@
 import { useState } from 'react';
 import './App.css';
+import styled from 'styled-components';
+
+
+const SubBox = styled.div`
+    background-color: #eee;
+  `;
+function SubPage() {
+
+  return (
+    <SubBox>
+      <h2>서브 페이지</h2>
+      <div>Hello World</div>
+    </SubBox>
+  );
+}
 
 function App() {
   const [title, setTitle] = useState(['list1', 'list2', 'list3']);
@@ -26,15 +41,8 @@ function App() {
     </div>
   );
 
-  function SubPage() {
 
-    return (
-      <div>
-        <h2>서브 페이지</h2>
-        <div>Hello World</div>
-      </div>
-    );
-  }
+
 
 }
 export default App;
