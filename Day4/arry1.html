@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const fruits = ['바나나', '사과', '감', '오렌지'];
+        for (let i = 0; i < fruits.length; i++) {
+            console.log(fruits[i]);
+        }
+
+        for (let i of fruits) {
+            console.log(i);
+        }
+        fruits.forEach((item) => console.log(item));
+
+        const frontArry = fruits.slice(0, 2);
+        console.log(frontArry);
+        const backArry = fruits.slice(2);
+        console.log(backArry);
+
+        const newArry = [...frontArry, "추가 과일", ...backArry];
+        console.log(newArry);
+        console.clear();
+
+
+        class Student {
+            constructor(name, age, enrolled, score) {
+                this.name = name;
+                this.age = age;
+                this.enrolled = enrolled;
+                this.score = score;
+            }
+        }
+
+        const students = [
+            new Student('A', 29, true, 45),
+            new Student('B', 27, false, 80),
+            new Student('C', 30, true, 90),
+            new Student('D', 40, false, 60),
+            new Student('E', 18, true, 88),
+        ]
+
+        // 90점 이상 학생 (find 제일 첫번째 true 값 반환)
+        console.log(students.find((student) => student.score >= 90));
+
+        // 80점 이상 학생 모두 출력
+        console.log(students.filter((student) => student.score >= 80));
+
+
+
+    </script>
+</body>
+
+</html>

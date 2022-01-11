@@ -1,35 +1,71 @@
 import './App.css';
-import { Header } from './Header';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import UserList from './UserList';
+import CreateUser from './CreateUser';
 
 function App() {
 
-  const [subject, setSubject] = useState([
-    { title: 'WEB', sub: '인터넷에 설명설명....' }
-  ]);
-  const [content, setContent] = useState([
-    { id: 1, title: "Html", desc: '에치티에멜' },
-    { id: 2, title: "CSS", desc: '시에스에스' },
-    { id: 3, title: "Js", desc: '자바스크립트짱' },
+  const [inputs, setInputs] = useState({
+    username: '',
+    email: ''
+  });
+
+  const { username, email } = inputs;
+
+  const onChange = e => {
+    const { name, value } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value
+    });
+  };
+
+  const [users, setUsers] = useState([
+    {
+      id: 1,
+      username: 'velopert',
+      email: 'public.velopert@gmail.com'
+    },
+    {
+      id: 2,
+      username: 'tester',
+      email: 'tester@example.com'
+    },
+    {
+      id: 3,
+      username: 'liz',
+      email: 'liz@example.com'
+    }
   ]);
 
+  const nextId = useRef(4);
+
+  const onCreate = () => {
+    const user = {
+      id: nextId.current,
+      username,
+      email
+    };
+    //setUsers(users.concat(user));
+    // 스프레드 문법으로 하면
+    setUsers([...users, user]);
+
+    setInputs({ // 초기화
+      username: '',
+      email: ''
+    });
+    nextId.current += 1;
+  };
 
   return (
     <>
-      <Header title={subject[0].title} sub={subject[0].sub} />
-      <ul>
-        {
-          content.map((list) => {
-            return (
-              <li key={list.id}>
-                {list.id}
-                {list.title}
-                {list.desc}
-              </li>
-            );
-          })
-        }
-      </ul>
+      <CreateUser
+        username={username}
+        email={email}
+        onChange={onChange}
+        onCreate={onCreate}
+      />
+      <UserList users={users} />
     </>
   );
 }
