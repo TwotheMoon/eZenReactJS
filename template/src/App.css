@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+.container{
+  border: 5px solid #aaa;
+  margin: 15px;
+}
