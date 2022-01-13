@@ -25,6 +25,10 @@
         // btn.addEventListener('click', user.sayHi);
         btn.addEventListener('click', admin);
 
+        console.log('bind 호출');
+        var bindSayHi = admin.bind(user);
+        bindSayHi();
+        btn.addEventListener('click', bindSayHi);
     </script>
 </body>
 
