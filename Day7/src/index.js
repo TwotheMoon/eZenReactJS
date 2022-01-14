@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Todo from './Todo';
+import App from './App';
+import LifeCycle from './LifeCycle';
 
 ReactDOM.render(
-  <Todo />,
+  <LifeCycle />,
   document.getElementById('root')
 );

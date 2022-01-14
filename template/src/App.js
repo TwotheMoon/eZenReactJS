@@ -1,93 +1,49 @@
 import './App.css';
-import React, { useRef, useState } from 'react';
-import UserList from './UserList';
-import CreateUser from './CreateUser';
+import React, { useState } from "react";
+import Button from './Button';
+import Board from './Board';
 
 function App() {
+  const [number, setNumber] = useState(1);
+  const [gameStory, setGameStory] = useState([]);
 
-  const [inputs, setInputs] = useState({
-    username: '',
-    email: ''
-  });
+  const [blueNumber, setBlueNumber] = useState(1);
+  const [blueGameStory, setBlueGameStory] = useState([]);
 
-  const { username, email } = inputs;
+  function random1(n) {
+    return Math.ceil(Math.random() * n);
+  }
+  function random2(n) {
+    return Math.ceil(Math.random() * n);
+  }
 
-  const onChange = e => {
-    const { name, value } = e.target;
-    setInputs({
-      ...inputs,
-      [name]: value
-    });
+  const handleRollClick = () => {
+    const nextNum1 = random1(6);
+    const nextNum2 = random2(6);
+    setNumber(nextNum1);
+    setGameStory([...gameStory, nextNum1]);
+
+    setBlueNumber(nextNum2);
+    setBlueGameStory([...gameStory, nextNum2]);
   };
 
-  const [users, setUsers] = useState([
-    {
-      id: 1,
-      username: 'velopert',
-      email: 'public.velopert@gmail.com',
-      active: true
-    },
-    {
-      id: 2,
-      username: 'tester',
-      email: 'tester@example.com',
-      active: false
-    },
-    {
-      id: 3,
-      username: 'liz',
-      email: 'liz@example.com',
-      active: false
-    }
-  ]);
+  const handleResetClick = () => {
+    setNumber(1);
+    setGameStory([]);
 
-  const nextId = useRef(4);
-  const nameInput = useRef();
-
-  const onCreate = () => {
-    const user = {
-      id: nextId.current,
-      username,
-      email
-    };
-
-    //setUsers(users.concat(user));
-    // 스프레드 문법으로 하면
-    setUsers([...users, user]);
-
-    setInputs({ // 초기화
-      username: '',
-      email: ''
-    });
-    nextId.current += 1;
-    nameInput.current.focus();
-  };
-
-  const onRemove = id => {
-    // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
-    // = user.id 가 id 인 것을 제거함
-    setUsers(users.filter(user => user.id !== id));
-  };
-
-  const onToggle = id => {
-    setUsers(
-      users.map(user =>
-        user.id === id ? { ...user, active: !user.active } : user
-      )
-    );
-  };
+    setBlueNumber(1);
+    setBlueGameStory([]);
+  }
 
   return (
-    <>
-      <CreateUser
-        username={username}
-        email={email}
-        onChange={onChange}
-        onCreate={onCreate}
-        nameInput={nameInput}
-      />
-      <UserList users={users} onRemove={onRemove} onToggle={onToggle} />
-    </>
+    <div className='App'>
+      <Button onClick={handleRollClick}>던지기</Button>
+      <Button onClick={handleResetClick}>처음부터</Button>
+      <div className='boards'>
+        <Board color="red" user="나" number={number} gameStory={gameStory} />
+        <Board color="blue" user="상대" number={blueNumber} gameStory={blueGameStory} />
+      </div>
+    </div>
   );
 }
 export default App;

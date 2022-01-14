@@ -5,8 +5,6 @@ function LifeCycle() {
     const [funcShow, setFuncShow] = useState(true);
     const [classShow, setClassShow] = useState(true);
 
-
-
     return (
         <div className="container">
             <h1>React LifeCycle</h1>
