@@ -1,14 +1,16 @@
 import { useRef } from "react";
 
-function HabitForm({ setHabits }) {
+function HabitForm({ habits, setHabits }) {
     const inputRef = useRef(null);
     const onSubmit = (e) => {
         e.preventDefault();
-        const newTitle = inputRef.current.value;
+        const newTitle = {
+            id: Date.now(),
+            name: inputRef.current.value,
+            count: 0
+        }
+        setHabits([...habits, newTitle]);
 
-        setHabits((list) => {
-            console.log(list);
-        })
     }
 
     return (

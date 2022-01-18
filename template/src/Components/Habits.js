@@ -15,7 +15,7 @@ function Habits({ habits, onIncrement, onDecrement, onDelete, onReset, setHabits
     }
     return (
         <>
-            <HabitForm setHabits={setHabits} />
+            <HabitForm habits={habits} setHabits={setHabits} />
             {habits.map((list) => {
                 return <Habit key={list.id} list={list}
                     onIncrement={handleIncrement}
