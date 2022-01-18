@@ -1,11 +1,11 @@
 import Dice from "./Dice";
 
-function Board({ number, gameStory, color, user }) {
+function Board({ gameStory, color, user }) {
     const result = gameStory.reduce((prev, curr) => {
         return prev + curr
     }, 0);
-    console.log(result);
 
+    const number = gameStory[gameStory.length - 1] || 1
     return (
         <div>
             <h2>{user}</h2>

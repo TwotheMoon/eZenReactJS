@@ -1,0 +1,15 @@
+.App {
+  width: 30%;
+  text-align: center;
+  margin: auto;
+}
+
+.container{
+  border: 5px solid #aaa;
+  margin: 15px;
+}
+
+.boards{
+  display: flex;
+  justify-content: space-between;
+}
