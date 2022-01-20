@@ -9,7 +9,6 @@ function HabitForm({ habits, setHabits }) {
             name: inputRef.current.value,
             count: 0
         }
-        inputRef.current.value = "";
         setHabits([...habits, newHabits]);
     }
 
