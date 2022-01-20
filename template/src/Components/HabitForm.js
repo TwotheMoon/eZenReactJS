@@ -4,13 +4,12 @@ function HabitForm({ habits, setHabits }) {
     const inputRef = useRef(null);
     const onSubmit = (e) => {
         e.preventDefault();
-        const newTitle = {
+        const newHabits = {
             id: Date.now(),
             name: inputRef.current.value,
             count: 0
         }
-        setHabits([...habits, newTitle]);
-
+        setHabits([...habits, newHabits]);
     }
 
     return (

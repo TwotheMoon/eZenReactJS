@@ -5,11 +5,7 @@ import Navbar from './Components/Navbar';
 
 function App() {
 
-  const [habits, setHabits] = useState([
-    { id: 1, name: 'Reading', count: 0 },
-    { id: 2, name: 'Water', count: 0 },
-    { id: 3, name: 'Coding', count: 0 },
-  ]);
+  const [habits, setHabits] = useState([]);
   const handleIncrement = (list) => {
     const copyHabits = [...habits];
     const index = copyHabits.indexOf(list);
