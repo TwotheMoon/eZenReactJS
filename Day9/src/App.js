@@ -30,6 +30,7 @@ function App() {
     })
     setHabits(copyHabits);
   }
+
   return (
     <div className="habit">
       <Navbar totalCount={habits.filter((item) => item.count > 0).length} />

@@ -1,46 +1,42 @@
-import { useState } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Habits from './Components/Habits';
-import Navbar from './Components/Navbar';
+import Graphics from './Components/Graphics';
+import Home from './Components/Home';
+import NotFound from './Components/NotFound';
+import Web from './Components/Web';
+
 
 function App() {
 
-  const [habits, setHabits] = useState([]);
-  const handleIncrement = (list) => {
-    const copyHabits = [...habits];
-    const index = copyHabits.indexOf(list);
-    copyHabits[index].count++;
-    setHabits(copyHabits);
-  }
-  const handleDecrement = (list) => {
-    const copyHabits = [...habits];
-    const index = copyHabits.indexOf(list);
-    const count = copyHabits[index].count - 1;
-    copyHabits[index].count = count < 0 ? 0 : count;
-    setHabits(copyHabits);
-  }
-  const handleDelete = (list) => {
-    const copyHabits = habits.filter((item) => item.id !== list.id);
-    setHabits(copyHabits);
-  }
-
-  const handleReset = () => {
-    const copyHabits = habits.map((list) => {
-      list.count = 0; return list
-    })
-    setHabits(copyHabits);
-  }
   return (
-    <div className="habit">
-      <Navbar totalCount={habits.filter((item) => item.count > 0).length} />
-      <Habits
-        habits={habits}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onDelete={handleDelete}
-        onReset={handleReset}
-        setHabits={setHabits}
-      />
+    <div className='app'>
+      <h1>React Router Dom</h1>
+      <ul>
+        <Link to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/web">
+          <li>Web</li>
+        </Link>
+        <Link to="/graphics">
+          <li>Graphics</li>
+        </Link>
+      </ul>
+      <hr />
+      <Switch>
+        <Route path="/" exact >
+          <Home />
+        </Route>
+        <Route path="/web">
+          <Web />
+        </Route>
+        <Route path="/graphics">
+          <Graphics />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
+      </Switch>
     </div>
   );
 }
