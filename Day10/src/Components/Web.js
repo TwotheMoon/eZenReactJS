@@ -29,9 +29,9 @@ function Web() {
             <h1>Web</h1>
             <hr />
             <ul>
-                {contents.map((list) => {
+                {contents.map((list, i) => {
                     return (
-                        <Link key={list.id} to={`/web/:${list.id}`}>
+                        <Link key={list.id} to={'/web/' + (i + 1)}>
                             <li>{list.title}</li>
                         </Link>
                     );
@@ -39,6 +39,7 @@ function Web() {
             </ul>
             <Switch>
                 <Route path={`/web/:subject`}>
+                    <Subject />
                 </Route>
             </Switch>
         </div>
