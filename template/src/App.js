@@ -1,25 +1,15 @@
-import { Route, } from 'react-router-dom';
 import './App.css';
-import Quiz from './Quiz';
-import Score from './Score';
-import Start from './Start';
-import { useState } from 'react';
-
+// import Props from './Props';
+// import UseReducerHook from './UseReducerHook';
+// import UseStateHook from './UseStateHook';
 
 function App() {
-  const [name, setName] = useState('건강상식');
 
   return (
     <div className='app'>
-      <Route path="/" exact>
-        <Start name={name} />
-      </Route>
-      <Route path="/quiz">
-        <Quiz />
-      </Route>
-      <Route path="/score">
-        <Score />
-      </Route>
+      {/* <UseStateHook /> */}
+      {/* <UseReducerHook /> */}
+      {/* <Props /> */}
     </div>
   );
 }
