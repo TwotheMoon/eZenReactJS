@@ -1,3 +1,7 @@
+import { createContext } from "react"
+
+export const IndexContext = createContext();
+
 export const initialState = {
     text: '인사말',
     count: 0
