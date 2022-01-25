@@ -1,4 +1,5 @@
 import './App.css';
+import UseContextHook from './UseContextHook';
 // import Props from './Props';
 // import UseReducerHook from './UseReducerHook';
 // import UseStateHook from './UseStateHook';
@@ -10,6 +11,7 @@ function App() {
       {/* <UseStateHook /> */}
       {/* <UseReducerHook /> */}
       {/* <Props /> */}
+      <UseContextHook />
     </div>
   );
 }
