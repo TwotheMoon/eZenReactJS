@@ -1,16 +1,18 @@
 import { Route, } from 'react-router-dom';
 import './App.css';
-import Quiz from './Components/Quiz';
-import Score from './Components/Score';
-import Start from './Components/Start';
+import Quiz from './Quiz';
+import Score from './Score';
+import Start from './Start';
+import { useState } from 'react';
 
 
 function App() {
+  const [name, setName] = useState('건강상식');
 
   return (
     <div className='app'>
       <Route path="/" exact>
-        <Start />
+        <Start name={name} />
       </Route>
       <Route path="/quiz">
         <Quiz />
