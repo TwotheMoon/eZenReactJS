@@ -1,0 +1,92 @@
+{
+    "days": [
+        {
+            "id": 1,
+            "day": 1
+        },
+        {
+            "id": 2,
+            "day": 2
+        },
+        {
+            "id": 3,
+            "day": 3
+        },
+        {
+            "id": 4,
+            "day": 4
+        }
+    ],
+    "words": [
+        {
+            "id": 1,
+            "day": 1,
+            "syntax": "props",
+            "func": "속성전달",
+            "isDone": false
+        },
+        {
+            "id": 2,
+            "day": 1,
+            "syntax": "useState",
+            "func": "변수값제어",
+            "isDone": false
+        },
+        {
+            "id": 3,
+            "day": 2,
+            "syntax": "useState",
+            "func": "속성값제어",
+            "isDone": false
+        },
+        {
+            "id": 4,
+            "day": 2,
+            "syntax": "useState",
+            "func": "변수값제어",
+            "isDone": false
+        },
+        {
+            "id": 5,
+            "day": 3,
+            "syntax": "useContext",
+            "func": "속성값제어",
+            "isDone": false
+        },
+        {
+            "id": 6,
+            "day": 3,
+            "syntax": "useEffect",
+            "func": "속성값제어",
+            "isDone": false
+        },
+        {
+            "id": 7,
+            "day": 3,
+            "syntax": "useRef",
+            "func": "Dom 접근",
+            "isDone": false
+        },
+        {
+            "id": 8,
+            "day": 3,
+            "syntax": "useMemo",
+            "func": "랜더링 제어",
+            "isDone": false
+        },
+        {
+            "id": 9,
+            "day": 4,
+            "syntax": "destructuring",
+            "func": "props전달",
+            "isDone": false
+        },
+        {
+            "id": 10,
+            "day": 4,
+            "syntax": "dispath",
+            "func": "이벤트 실행",
+            "isDone": false
+        }
+    ]
+}
