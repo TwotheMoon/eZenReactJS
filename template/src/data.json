@@ -35,8 +35,8 @@
         {
             "id": 3,
             "day": 2,
-            "syntax": "useState",
-            "func": "속성값제어",
+            "syntax": "store",
+            "func": "전역변수 관리",
             "isDone": false
         },
         {
