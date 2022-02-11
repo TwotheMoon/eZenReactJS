@@ -6,3 +6,8 @@
 li{
     list-style: none;
 }
+button{
+    padding: 15px;
+    margin-right: 15px;
+    cursor: pointer;
+}
