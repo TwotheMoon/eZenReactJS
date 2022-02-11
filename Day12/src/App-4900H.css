@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{text-decoration: none;}
+li{
+    list-style: none;
+    cursor: pointer;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+.app{
+    width: 800px;
+    margin: auto;
+}
+.menu a{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 10px;
+}
+.list{
+    display: flex;
+    width: 800px;
+    justify-content: space-around;
+    margin: 15px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+td{
+    padding: 10px;
+}

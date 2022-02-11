@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // console.log("함수 선언식--------------");
+        // function add(num1, num2) { return num1 + num2 }
+        // console.log(add(1, 2));
+        // console.log("함수 표현식--------------");
+        // let sum = function (num1, num2) {
+        //     return num1 + num2;
+        // }
+        // console.log(sum(1, 2));
+        console.log("Arrow--------------");
+        var hap = (num1, num2) => num1 + num2;
+        console.log(hap(2, 4));
+
+        console.log("객체 함수 표현식");
+        var user = {
+            name: 'point',
+            age: 40,
+
+            sayHi() {
+                console.log("hi");
+            }
+        }
+        console.log(user.name);
+
+    </script>
+</body>
+
+</html>

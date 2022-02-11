@@ -1,0 +1,10 @@
+.reviewListItem{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+}
+.reviewListItemImg{
+    height: 300px;
+    object-fit: contain;
+    margin-right: 15px;
+}
