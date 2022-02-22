@@ -5,29 +5,29 @@ const formatDate = (value) => {
     return `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDay()}`
 }
 
-function ReviewListItem({ list }) {
+function ReviewListItem({ item, handleDelete }) {
 
     return (
         <div>
             <section className="reviewListItem">
-                <img src={list.imgUrl} className="reviewListItemImg" />
+                <img src={item.imgUrl} className="reviewListItemImg" />
                 <div>
-                    <h2>{list.title}</h2>
-                    <p>{list.rating}</p>
-                    <p>{formatDate(list.createdAt)}</p>
-                    <p>{list.content}</p>
+                    <h2>{item.title}</h2>
+                    <p>{item.rating}</p>
+                    <p>{formatDate(item.createdAt)}</p>
+                    <p>{item.content}</p>
+                    <button onClick={() => handleDelete(item.id)}>삭제</button>
                 </div>
             </section>
         </div>
     );
 }
 
-function ReviewList({ items }) {
+function ReviewList({ items, handleDelete }) {
 
     return (
         <ul>
-            {items.map((list) => (<li key={list.id}><ReviewListItem list={list} /></li>))}
-
+            {items.map((item) => (<li key={item.id}><ReviewListItem item={item} handleDelete={handleDelete} /></li>))}
         </ul>
     );
 }
