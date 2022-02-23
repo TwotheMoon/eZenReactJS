@@ -1,0 +1,8 @@
+.reviewForm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.reviewForm input {
+    padding: 10px;
+}
