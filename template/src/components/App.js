@@ -21,7 +21,6 @@ function App() {
     setItems(reviews);
   };
 
-
   useEffect(() => {
     handleLoad(order);
   }, [order]);
